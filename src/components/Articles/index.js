@@ -18,10 +18,6 @@ class Articles extends Component {
 
   render() {
     const articles = this.props.articles.appReducer.users;
-    console.log(this.props);
-    console.log(articles);
-    console.log(this.state);
-    console.log(this.state.inputValue);
 
     return (
       <div className="container">
