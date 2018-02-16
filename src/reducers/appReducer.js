@@ -7,14 +7,16 @@ const INITIAL_STATE = {
 export const appReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case appTypes.NEW_USER:
-      const newItem = {
+    return {
+      ...state,
+      users: [...state.users,
+        {
         id: Date.now(),
         name: faker.internet.userName(),
-        email: ''
-      };
-      return {
-        ...state,
-        users: [...state.users, newItem]
+        email: faker.internet.email(),
+        text: faker.lorem.paragraph()
+        }
+        ]
       };
     default:
       return state;

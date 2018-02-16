@@ -9,8 +9,10 @@ class AddUser extends Component {
         <div className="card">
         <div className="card-header">AddUser</div>
           <div className="card-body">
-            {user.map((u) => {return <p key={u.id}>@{u.name}</p>})}
-            <p className="card-text">All Users: {user.length}</p>
+            {user.map((u) => {return <div key={u.id}>@{u.name} <b>email:</b> {u.email}
+            <hr />
+            </div>})}
+            <p className="card-text"><b>All Users:</b> {user.length}</p>
             <button className="btn btn-primary float-right" onClick={this.props.addUser}>
               Add User
             </button>
